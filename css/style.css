@@ -12,8 +12,6 @@
 
 .container .center {
     background-color: #469cf3;
-    width: 300px;
-    height: 150px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -29,13 +27,13 @@
 
 .container .center {
     width: 40%;
-    height: 50%;
+    height: 70%;
     padding: 25px;
     border-radius: 10px;
 }
 
 /**/
-.information { /*background-color: red;*/ height: 25%; }
+.information { /*background-color: red;*/ height: 30%; }
 
 .choice { /*background-color: yellow;*/ height: 8%; }
 
@@ -48,6 +46,12 @@
 .logo-meteo-realtime { width: 85px; animation: rotate-sun 5s linear infinite; transform-origin: center; }
 .information .info-right { width: 50%; text-align: right; }
 .information .info-right p { margin-top: 5%; }
+
+.info-left p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* Fin information */
 
@@ -89,7 +93,7 @@
 .chart-container {
     margin: auto;
     text-align: center;
-    width: 60%;
+    width: 65%;
 }
 
 .graph_option button {
@@ -173,7 +177,7 @@ nav img { width: 20px; margin-left: 20px; }
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
     .container .center {
         width: 90%;
         height: 90%;
@@ -193,5 +197,10 @@ nav img { width: 20px; margin-left: 20px; }
     nav { display: block; justify-content: center; align-items: center; }
 
     nav h3 { display: none; }
+
+    .info-left p {
+        white-space: normal;
+        overflow: visible;
+    }
 
 }
