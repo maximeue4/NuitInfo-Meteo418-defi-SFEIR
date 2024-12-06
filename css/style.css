@@ -1,0 +1,197 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.container .center {
+    background-color: #469cf3;
+    width: 300px;
+    height: 150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+
+    /* Différent navigateur */
+    --webkit-transform: (-40%, -45%);
+    --moz-transform: (-50%, -45%);
+    --ms-transform: (-50%, -45%);
+    --o-transform: (-50%, -45%);
+
+}
+
+.container .center {
+    width: 40%;
+    height: 50%;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/**/
+.information { /*background-color: red;*/ height: 25%; }
+
+.choice { /*background-color: yellow;*/ height: 8%; }
+
+.graph_option { /*background-color: black;*/ height: 55%; }
+
+/* Debut information */
+
+.information { display: flex; }
+.information .info-left { width: 50%; }
+.logo-meteo-realtime { width: 85px; animation: rotate-sun 5s linear infinite; transform-origin: center; }
+.information .info-right { width: 50%; text-align: right; }
+.information .info-right p { margin-top: 5%; }
+
+/* Fin information */
+
+/* Debut choix */
+
+.choice { display: flex; justify-content: space-between; align-items: center; margin: 4% 0; }
+.choice * { display: inline-block; width: 33.33%; text-align: center; cursor: pointer; }
+
+.choice p {
+    background-color: white;
+    height: 100%;
+    border-radius: 5px;
+    /* Centrer le text du boutton */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.choice .select {
+    background-color: #808080;
+    color: white;
+}
+
+.choice .item2 {
+    margin: 0 20px;
+}
+
+/* Fin choix */
+
+/* Debut Graph Option  */
+
+.graph_option {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.chart-container {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+.graph_option button {
+    border: none;
+    background-color: #808080;
+    padding: 10px;
+    margin: 0 20px;
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Fin Graph Option  */
+
+/* Debut Navigation */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #469cf3;
+    display: flex;
+    padding: 20px;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right { display: flex; justify-content: center; align-items: center; }
+
+h3 { margin: 0; color: white; font-size: 40px; }
+
+nav input {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    text-indent: 15px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+}
+
+nav img { width: 20px; margin-left: 20px; }
+
+#btn-search { cursor: pointer; background-color: white; width: 40px; height: 40px; margin-left: 0; border-radius: 0 20px 20px 0; }
+
+/* Vidéo */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(50%);
+}
+
+/* Fin Navigation */
+
+/* Animation de rotation */
+@keyframes rotate-sun {
+    0% {
+        transform: rotate(0deg); /* Point de départ */
+    }
+    25% {
+        transform: rotate(10deg); /* Point de départ */
+    }
+    50% {
+        transform: rotate(0deg); /* Point de départ */
+    }
+    75% {
+      transform: rotate(-10deg); /* Rotation complète */
+    }
+    100% {
+        transform: rotate(0deg); /* Rotation complète */
+    }
+}
+
+@media (max-width: 900px) {
+    .container .center {
+        width: 90%;
+        height: 90%;
+    }
+
+    .information .info-right p { margin-top: 15%; }
+    .logo-meteo-realtime { width: 55%; }
+    .select, .choice p { font-size: 20px;}
+
+    .graph_option button {
+        width: 75%;
+        margin-top: 5%;
+    }
+
+    .chart-container { width: 100%; }
+
+    nav { display: block; justify-content: center; align-items: center; }
+
+    nav h3 { display: none; }
+
+}

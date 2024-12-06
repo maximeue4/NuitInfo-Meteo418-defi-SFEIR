@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Météo {{country}}</title>
+</head>
+<body>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="cloud_video.mp4" type="video/mp4">
+    </video>
+
+    <nav>
+        <h3>Météo 418</h3>
+        <div class="nav-right">
+            <input id="input-search" placeholder="Ville" autocomplete="off">
+            <img id="btn-search" src="search.png">
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="center">
+            <div class="information">
+                <div class="info-left">
+                    <img class="logo-meteo-realtime" src="{{weather_logo}}">
+                    <p>Température ressentie</p>
+                    <p>{{teeling_temperature}}°C</p>
+                </div>
+                <div class="info-right">
+                    <h2>{{country}}</h2>
+                    <h1>{{temperature}}°C</h1>
+                    <p>{{weather}}</p>
+                    <p>Vent : {{windspeed}} km/h</p>
+                </div>
+            </div>
+            <div class="choice">
+                <p id="btn-rain" class="">Précipitation</p>
+                <p id="btn-speed" class="item2">Vent</p>
+                <p id="btn-humidity" class="">Humidité</p>
+            </div>
+            <div class="graph_option">
+                <div class="chart-container">
+                    <canvas id="barCanvas" aria-label="chart" role="img"></canvas>
+                </div>
+                <div>
+                    <button id="btn_today_rain">Aujourd'hui</button>
+                    <button id="btn_tomorrow">{{name_of_tomorrow}}</button>
+                    <button id="btn_after_tomorrow">{{name_of_after_tomorrow}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        value_graph_today = {{value_graph_today}};
+        value_graph_tomorrow = {{value_graph_tomorrow}};
+        value_graph_after_tomorrow = {{value_graph_after_tomorrow}}
+
+        value_graphSpeed_today = {{value_graphSpeed_today}};
+        value_graphSpeed_tomorrow = {{value_graphSpeed_tomorrow}};
+        value_graphSpeed_after_tomorrow = {{value_graphSpeed_after_tomorrow}};
+
+        value_graphHumidity_today = {{value_graphHumidity_today}};
+        value_graphHumidity_tomorrow = {{value_graphHumidity_tomorrow}};
+        value_graphHumidity_after_tomorrow = {{value_graphHumidity_after_tomorrow}};
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
